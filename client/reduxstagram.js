@@ -9,6 +9,8 @@ import PhotoGrid from './components/PhotoGrid';
 
 // Import React Router Dependencies
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import store, { history } from './store';
 
 /** Render out the Router component, and write out all the routes to match.
  * At the top level "/" (every), use the Main component. Then, the IndexRoute 
@@ -17,12 +19,15 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
  * of the Main component (because they are both nested within)
 */
 const router = (
-  <Router history={browserHistory}>
-    <Route path="/" component={Main}>
-      <IndexRoute component={PhotoGrid}></IndexRoute>
-      <Route path="/view/:postId" component={Single}></Route>
-    </Route>
-  </Router>
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/" component={Main}>
+        <IndexRoute component={PhotoGrid}></IndexRoute>
+        <Route path="/view/:postId" component={Single}></Route>
+      </Route>
+    </Router>
+  </Provider>
+  
 );
 
 ReactDOM.render(router, document.getElementById('root'));
