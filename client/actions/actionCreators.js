@@ -1,3 +1,7 @@
+/** An action is just an object with information about what happened
+ * and what needs to change...
+ */
+
 // increment likes (index is the post to be incremented)
 export function increment(index){
   return {

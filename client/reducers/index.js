@@ -1,3 +1,8 @@
+/** The reducer actually does the editing of state 
+ * - Whenever an action is dispatched, EVERY reducer will run
+ * --- whether something changes in state is up to you (switch statement)
+*/
+
 // A reducer is created for every single piece of state
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
