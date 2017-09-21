@@ -4,6 +4,7 @@
 
 // increment likes (index is the post to be incremented)
 export function increment(index){
+  console.log("Dispatching increment");
   return {
     type: 'INCREMENT_LIKES',
     index
@@ -12,6 +13,7 @@ export function increment(index){
 
 // add comment
 export function addComment(postId, author, comment){
+  console.log("Dispatching add comment");
   return {
     type: 'ADD_COMMENT',
     postId,
